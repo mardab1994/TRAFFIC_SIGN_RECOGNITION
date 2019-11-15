@@ -24,6 +24,8 @@ MIN = -9999999
 list_of_neurons = []
 list_of_images = []
 
+winner_images_id =[]
+winner_neurons_id = []
 
 
 def print_usage():
@@ -125,9 +127,6 @@ if MODE == _LEARN_:
 	#time to get winners :) 
 	#from matrix we will get next biggest stimulation 
 	#winners takes all
-
-	winner_images_id =[]
-	winner_neurons_id = []
 
 	for i in range(number_of_images):
 		image_id, neuron_id = getWinners(matrix, winner_images_id, winner_neurons_id)
