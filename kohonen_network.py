@@ -161,6 +161,24 @@ if MODE != _LEARN_:
 	for i in range(len(winner_images_id)):
 		print(winner_images_id[i], winner_neurons_id[i])
 	
+if MODE == _LEARN_ or MODE == _RELEARN_:
+	#learning network
+	
+	for age in range(age_of_learning):
+		if (age % 5 == 0):
+			print("age of learning: "+str(age))
+		
+		for i in range(len(winner_images_id)):
+			image_id = winner_images_id[i]
+			neuron_id = winner_neurons_id[i]
+			
+			list_of_neurons[neuron_id].obliczWyjscie(list_of_images[image_id])
+			list_of_neurons[neuron_id].modyfikujWage(list_of_images[image_id])
+			
+	#save computed weights
+	for neuron in list_of_neurons:
+		neuron.zapiszWagi()
+
 
 
 
