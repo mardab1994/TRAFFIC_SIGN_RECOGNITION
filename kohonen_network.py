@@ -144,6 +144,22 @@ if MODE == _LEARN_:
 		winners_matrix_file.write(str(winner_images_id[i])+", "+str(winner_neurons_id[i])+"\n")
 	winners_matrix_file.close()
 
+if MODE != _LEARN_:
+	#getting winners_matrix
+	print("getting winners matrix from file")
+	winners_matrix_file = open("winners_matrix.txt", "r")
+	
+	line =" "
+	while line != "":
+		line = winners_matrix_file.readline()
+		if line =="": break
+		line = line.replace('\n', '')
+		line = line.split(", ")
+		winner_images_id.append(int(line[0]))
+		winner_neurons_id.append(int(line[1]))
+	winners_matrix_file.close()
+	for i in range(len(winner_images_id)):
+		print(winner_images_id[i], winner_neurons_id[i])
 	
 
 
