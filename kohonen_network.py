@@ -136,14 +136,14 @@ if MODE == _LEARN_:
 		winner_neurons_id.append(neuron_id)
 		
 	#print and save id images with their winners - neurons id
-	out = open("winners_matrix.txt","w")	
+	winners_matrix_file = open("winners_matrix.txt","w")	
 	
 	print("(image id, neuron id)")
 	for i in range(len(winner_images_id)):
 		print(winner_images_id[i], winner_neurons_id[i])
-		out.write(str(winner_images_id[i])+", "+str(winner_neurons_id[i])+"\n")
-	out.close()
-	
+		winners_matrix_file.write(str(winner_images_id[i])+", "+str(winner_neurons_id[i])+"\n")
+	winners_matrix_file.close()
+
 	
 
 
