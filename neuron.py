@@ -7,6 +7,7 @@ class Neuron:
 		self.spadekWspUczenia = (self.wspUczenia / liczbaEpok) / 2
 		self.y = 0
 		self.wagi = []
+		self.id = id
 		if tryb == 0:
 			for i in range(iloscWejsc):
 				self.wagi.append(random.uniform(-0.9, 0.9))
@@ -41,15 +42,15 @@ class Neuron:
 		self.wspUczenia = self.wspUczenia - self.spadekWspUczenia 
 		#print(self.wspUczenia)
 	
-	def zapiszWagi(self, id):
-		out = open("wagi/wagiNeuronu"+str(id)+".txt","w")
+	def zapiszWagi(self):
+		out = open("wagi/wagiNeuronu"+str(self.id)+".txt","w")
 		for i in range(len(self.wagi)):
 			#print((self.wagi[i]))
 			out.write(str(self.wagi[i])+"\n")
 		out.close()
 		
-	def wczytajWagi(self, id):
-		inputFile = open("wagi/wagiNeuronu"+str(id)+".txt", "r")
+	def wczytajWagi(self):
+		inputFile = open("wagi/wagiNeuronu"+str(self.id)+".txt", "r")
 		while line != "":
 			line = inputFile.readline()
 			if line =="": break
