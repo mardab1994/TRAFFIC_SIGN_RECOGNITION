@@ -113,9 +113,9 @@ if (DEBUG == 1):
 
 #time to show all images to all neurons and get the winners 
 matrix = [] 
-MODE = _LEARN_
-if MODE == _LEARN_:
 
+
+if MODE == _LEARN_:
 	for image in list_of_images:
 		neurons_stimulations = []
 		#show image to all neurons and save their stimulation 
