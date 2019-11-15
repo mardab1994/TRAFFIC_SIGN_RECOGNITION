@@ -69,7 +69,7 @@ def create_neurons(numOfNeurons, ageOfLearning):
 def read_images(numOfImages):
 	images = []
 	for i in range(numOfImages):
-		img = Image.open(str(i + 1)+".png")
+		img = Image.open("obrazy/"+str(i + 1)+".png")
 		arr = array(img)
 		x = arr.reshape(len(arr)*len(arr),1)		
 		images.append(x)
