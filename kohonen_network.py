@@ -180,8 +180,28 @@ if MODE == _LEARN_ or MODE == _RELEARN_:
 		neuron.zapiszWagi()
 
 
+			
+#time to test neural network
+good_recognitions = 0
+bad_recognitions = 0
 
+for i in range(number_of_images):
+	image = list_of_images[i]
+	max = -9999999
+	
+	for n in range(number_of_neurons):
+		list_of_neurons[n].obliczWyjscie(image)
+		if list_of_neurons[n].getWyjscie() > max:
+			max = list_of_neurons[n].getWyjscie()
+			winner_id = n
+	print("image number = "+str(i)+" recognited by neuron number = "+str(winner_id)+ " expected winner id = "+str(winner_neurons_id[winner_images_id.index(i)]))
+	if winner_id == winner_neurons_id[winner_images_id.index(i)]:
+		good_recognitions += 1
+	else:
+		bad_recognitions += 1
 
+print("Number of good recognitions = " + str(good_recognitions))
+print("Number of bad  recognitions = " + str(bad_recognitions))
 
 
 
