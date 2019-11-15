@@ -16,7 +16,7 @@ DEBUG = 1
 
 number_of_images = 0
 number_of_neurons = 0
-age_of_learning = 5
+age_of_learning = 10
 
 max =- 1000000
 MIN = -9999999
